@@ -25,21 +25,26 @@
 body{
     margin:0px;
     padding: 0px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 img{
     width: 30px;
     height: auto;
+
 }
 
 
 
 .container{
+    flex: 1;
     display: grid;
     grid-template-columns: 1fr 4fr;
     background-color: var(--color-background);
-    height: 100vh;
-    grid-template-rows: 1fr 8fr;
+    grid-template-rows: 90px 1fr;
+
 }
 
 
@@ -166,6 +171,9 @@ select{
     grid-column: 2/-1;
     grid-row: 2/3;
     position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px 1fr;
 
 }
 
@@ -173,6 +181,8 @@ select{
     font-size: 2rem;
     font-weight: bold;
     margin:15px;
+    grid-column: 1/2;
+    grid-row:1/2 ;
 }
 
 #createCard{
@@ -193,10 +203,10 @@ select{
 }
 
 .cardContainer{
+    grid-column: 1/2;
+    grid-row-start: 2;
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
-    height: 95%;
-    width: 100%;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
     gap:15px;
     margin: 15px;
 }
@@ -276,3 +286,9 @@ select{
     padding: 2px 10px;
 
 }
+
+input[type ="checkbox"]{
+    width: 20px;
+    height: 20px;
+}
+
