@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Library app
+    </title>
+    <link rel="stylesheet" href="style.css">
+    <script src = "./script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- left side bar -->
+
+        <div class="sidebar">
+            <div class="logo">
+                Library app
+            </div>
+
+            <div class="stared">
+                <button>
+                    <img src="./resources/star-outline.svg" alt="">
+                    <span>stared</span>
+                </button>
+            </div>
+
+            <div class="section">
+                <div class="choiceSelection">
+                    <select name="collection" id="choice">
+                        <option value="my-selection">My selection</option>
+                    </select>
+                </div>
+                <div class="createButton">
+                    <button>+ create section</button>
+                </div>
+            </div>
+
+            <div class="profile">
+                <img src="./resources/account_black.svg" alt="profile">
+                <span>
+                    Profile
+                </span>
+            </div>
+
+            <div class="help">
+                <img src="./resources/help-box.svg" alt="help">
+                <span>Help & feedback</span>
+            </div>
+
+            <div class="setting">
+                <img src="./resources/cog.svg" alt="setting">
+                <span>Settings</span>
+            </div>
+        </div>
+
+        <!-- header section -->
+
+        <div class="header">
+            <div class="search">
+                <img src="./resources/magnify.svg" alt="search">
+                <input type="search">
+
+            </div>
+
+            <div class="icons">
+                <img src="./resources/filter.svg" alt="filter">
+                <img src="./resources/white-balance-sunny.svg" alt="day">
+            </div>
+        </div>
+
+
+        <!-- content area -->
+
+        <div class="content">
+            <div class="sectionText">
+                My section
+
+            </div>
+            <div class="card">
+                <div class="left">
+                    <img src="./resources/book.svg" alt="book">
+                </div>
+
+                <div class="right">
+                    <div class="title">
+                        The odin project
+
+                    </div>
+
+                    <div class="author">
+                        the odin community
+
+                    </div>
+
+                    <div class="pages">
+                        600
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <label for="read">read</label>
+                    <input type="checkbox" id="read">
+
+                    <button id ="del">
+                        delete
+                    </button>
+                </div>
+
+            </div>
+
+
+            <button id = "createCard">+</button>
+        </div>
+
+    </div>
+    
+</body>
+</html>
