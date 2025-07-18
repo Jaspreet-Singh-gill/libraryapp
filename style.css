@@ -17,6 +17,7 @@
     --add-button-color:green;
     --logo-font-size :2.5rem;
     --side-bar-border-color:white;
+    --header-color:white;
 }
 
 
@@ -113,13 +114,50 @@ select{
 }
 
 
+/* header part */
+
 
 .header{
+    height: 80px;
     grid-column: 2/-1;
     grid-row-start: 1;
+    background-color: var(--header-color);
+    display:  grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows:  1fr;
+
 }
+
+.search{
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.search>input{
+    flex:1;
+    margin-right:50px;
+    margin-left: 5px;
+    background-color: var(--color-background);
+    border: 5px solid transparent;
+    border-radius: 20px;
+    outline-color: var(--color-side_bar);
+}
+
+.icons{
+    display: flex;
+    align-items: center;
+    gap:20px;
+    justify-content: end;
+    margin-right:30px;
+
+}
+
+
+
+
 
 .content{
     grid-column: 2/-1;
-    grid-row-start: 2;
+    grid-row-start: 2/-1;
 }
