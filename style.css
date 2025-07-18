@@ -1,0 +1,125 @@
+@font-face {
+    font-family: "logoFont";
+    src: url(https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Great+Vibes&display=swap);
+}
+
+
+:root{
+    --color-background: rgb(190, 190, 190);
+    --color-side_bar:rgb(53, 73, 255);
+    --side-bar-text-color:white;
+    --logo-color:white;
+    --logo-font:"logoFont",serif;
+    --web-font:serif;
+    --card-background-color:white;
+    --card-border-color:orange;
+    --card-button-color:red;
+    --add-button-color:green;
+    --logo-font-size :2.5rem;
+    --side-bar-border-color:white;
+}
+
+
+body{
+    margin:0px;
+    padding: 0px;
+}
+
+img{
+    width: 30px;
+    height: auto;
+}
+
+
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    background-color: var(--color-background);
+}
+
+
+/* sidebar */
+
+.sidebar{
+    grid-column: 1/2;
+    grid-row-start: 1/-1;
+    padding-left:25px;
+    background-color: var(--color-side_bar);
+    display: grid;
+    align-content: space-evenly;
+    grid-template-columns: 1fr;
+
+
+}
+
+.logo{
+    font-family:var(--logo-font);
+    color: var(--logo-color);
+    font-size: var(--logo-font-size);
+    font-weight: bold;
+    align-self: center;
+    justify-self: center;
+}
+
+
+.stared img{
+    height: 30px;
+    width: auto;
+}
+.stared>button,
+.createButton>button,
+.profile,
+.help,
+.setting,
+.choiceSelection{
+    width:80%;
+    display: flex;
+    height: 30px;
+    align-items: center;
+    justify-content: start;
+    gap:5px;
+
+    background-color: var(--color-side_bar);
+    color:var(--side-bar-border-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 0px;
+    
+}
+
+.stared>button:hover,
+.createButton>button:hover,
+.profile:hover,
+.help:hover,
+.setting:hover,
+.choiceSelection:hover{
+    border: 3px solid var(--side-bar-border-color);
+    border-radius: 10px;
+
+
+}
+
+select{
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-side_bar);
+    color: var(--side-bar-text-color);
+    outline:0px;
+    border:3px solid rgb(0 0 0 /0);
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+
+
+.header{
+    grid-column: 2/-1;
+    grid-row-start: 1;
+}
+
+.content{
+    grid-column: 2/-1;
+    grid-row-start: 2;
+}
