@@ -84,7 +84,6 @@ function createBook(){
     let message = document.querySelector("#message");
 
      let obj = new Book(titleInput.value,authorInput.value,pages.value,message.value);
-   
 
     arr.push(obj);
     createCard(obj);
@@ -92,11 +91,12 @@ function createBook(){
     authorInput.value = "";
     pages.value = "";
     message.value ="";
+    distroyForm();
 
 }
 
 function formAppear(){
-    let dialog = document.querySelector("dialog")
+    let dialog = document.querySelector("dialog");
     dialog.showModal();
 }
 
@@ -116,10 +116,10 @@ cancelForm.addEventListener("click",function(e){
 });
 
 
-let submit =document.querySelector("#submitForm");
-submit.addEventListener("click",function(e){
-    e.preventDefault();
+let submit =document.querySelector("form");
+submit.addEventListener("submit",function(e){
     createBook();
-    distroyForm();
+
+
 });
 
