@@ -78,16 +78,48 @@ function makeReadTrue(id){
 
 
 function createBook(){
-    // let titleInput = document.querySelector(".titleForm");
-    // let authorInput = document.querySelector(".authorForm");
-    // let pages = document.querySelector(".pageForm");
-    // let message = document.querySelector(".messageForm");
+    let titleInput = document.querySelector("#book-title");
+    let authorInput = document.querySelector("#book-author");
+    let pages = document.querySelector("#book-pages");
+    let message = document.querySelector("#message");
 
-    // let obj = new Book(titleInput.value,authorInput.value,pages.value,pages.value,message.value);
-    let obj = new Book("master","apprentaice",445," hello");
+     let obj = new Book(titleInput.value,authorInput.value,pages.value,message.value);
+   
 
     arr.push(obj);
     createCard(obj);
+    titleInput.value = "";
+    authorInput.value = "";
+    pages.value = "";
+    message.value ="";
 
 }
+
+function formAppear(){
+    let dialog = document.querySelector("dialog")
+    dialog.showModal();
+}
+
+let plus = document.querySelector("#createCard");
+
+plus.addEventListener("click",formAppear);
+
+function distroyForm(){
+    let dialog = document.querySelector("dialog")
+    dialog.close();
+}
+let cancelForm  =document.querySelector("#cancelForm");
+cancelForm.addEventListener("click",function(e){
+        e.preventDefault();
+        distroyForm();
+
+});
+
+
+let submit =document.querySelector("#submitForm");
+submit.addEventListener("click",function(e){
+    e.preventDefault();
+    createBook();
+    distroyForm();
+});
 
