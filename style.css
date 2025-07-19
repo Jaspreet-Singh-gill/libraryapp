@@ -276,7 +276,8 @@ select{
 
 
 
-.buttons>button{
+.buttons>button,
+.formButtons>span>button{
     font-size: 1.5rem;
     font-weight: bold;
     background-color: var(--color-side_bar);
@@ -290,5 +291,63 @@ select{
 input[type ="checkbox"]{
     width: 20px;
     height: 20px;
+}
+
+
+/* dialog box */
+
+dialog:open{
+    box-sizing: border-box;
+    width: 30%;
+    
+    height: 50%;
+    border:5px solid transparent;
+    border-radius: 15px;
+    box-shadow:  2px 2px 5px 1px gray;
+    /* justify-content: space-evenly; */
+}
+
+
+dialog:open>form{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+dialog:open>form>div{
+    box-sizing: border-box;
+    /* margin :10px; */
+    font-size: var(--main-font)*1.1;
+    font-weight: bold;
+
+
+}
+
+dialog:open .title,
+dialog:open .author,
+dialog:open .pages,
+dialog:open .message{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    color: black;
+    font-weight: bold;
+}
+
+
+dialog:open .formButtons{
+
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.formButtons>span{
+    align-items: center;
+    justify-self: end;
+    margin: 15px 10px;
+
+
+
 }
 
