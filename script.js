@@ -1,21 +1,77 @@
 
-let arr = [{"title":"The odin project",
+// let arr = [{"title":"The odin project",
+//             "author":"the odin community",
+//             "pages":600,
+//             "message":"",
+//             "id":crypto.randomUUID(),
+//             "read":false,
+
+// }];
+
+
+class LibraryBook{
+    #arr = [{"title":"The odin project",
             "author":"the odin community",
             "pages":600,
             "message":"",
             "id":crypto.randomUUID(),
             "read":false,
 
-}];
+    }];
 
 
-function Book(title,author,pages,message){
-    this.title=title;
-    this.author = author;
-    this.pages = pages;
-    this.message = message;
-    this.id = crypto.randomUUID();
-    this.read =false;
+    // Book(title,author,pages,message){
+    //     this.title=title;
+    //     this.author = author;
+    //     this.pages = pages;
+    //     this.message = message;
+    //     this.id = crypto.randomUUID();
+    //     this.read =false;
+    // }
+
+    createBook(title,author,pages,message){
+        let obj = new Book(title,author,pages,message);
+        this.#arr.push(obj);
+        return obj;
+
+    }
+
+    deleteBook(id){
+        let i = 0;
+        for( i = 0; i<this.#arr.length;i++){
+            if(this.#arr[i].id == id){
+                this.#arr.splice(i,1);
+                return;
+            }
+        }
+    }
+
+
+    makeReadTrue(id){
+        let i = 0;
+        for( i = 0; i<this.#arr.length;i++){
+            if(this.#arr[i].id == id){
+                this.#arr[i].read =true;
+                return;
+            }
+        }
+
+    }
+}
+
+
+const mySection = new LibraryBook();
+
+
+class Book{
+    constructor(title,author,pages,message){    
+        this.title=title;
+        this.author = author;
+        this.pages = pages;
+        this.message = message;
+        this.id = crypto.randomUUID();
+        this.read =false;
+    }
 }
 
 
@@ -40,12 +96,12 @@ function createCard(object){
 
 
     cardDelbutton.addEventListener("click",function(){
-        deleteBook(object.id);
+        mySection.deleteBook(object.id);
         cardContainer.removeChild(card);
     });
 
     checkBox.addEventListener("click",function(){
-        makeReadTrue(object.id);
+        mySection.makeReadTrue(object.id);
     });
 
 
@@ -54,27 +110,27 @@ function createCard(object){
 
 
 
-function deleteBook(id){
-    let i = 0;
-    for( i = 0; i<arr.length;i++){
-        if(arr[i].id == id){
-            arr.splice(i,1);
-            return;
-        }
-    }
-}
+// function deleteBook(id){
+//     let i = 0;
+//     for( i = 0; i<arr.length;i++){
+//         if(arr[i].id == id){
+//             arr.splice(i,1);
+//             return;
+//         }
+//     }
+// }
 
 
-function makeReadTrue(id){
-    let i = 0;
-    for( i = 0; i<arr.length;i++){
-        if(arr[i].id == id){
-            arr[i].read =true;
-            return;
-        }
-    }
+// function makeReadTrue(id){
+//     let i = 0;
+//     for( i = 0; i<arr.length;i++){
+//         if(arr[i].id == id){
+//             arr[i].read =true;
+//             return;
+//         }
+//     }
 
-}
+// }
 
 
 function createBook(){
@@ -83,9 +139,9 @@ function createBook(){
     let pages = document.querySelector("#book-pages");
     let message = document.querySelector("#message");
 
-     let obj = new Book(titleInput.value,authorInput.value,pages.value,message.value);
+    let obj = mySection.createBook(titleInput.value,authorInput.value,pages.value,message.value);
 
-    arr.push(obj);
+    // arr.push(obj);
     createCard(obj);
     titleInput.value = "";
     authorInput.value = "";
